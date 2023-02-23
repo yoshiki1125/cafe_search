@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controller\CafeController;
+use App\Http\Controllers\CafeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +14,5 @@ use App\Http\Controller\CafeController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [CafeController::class, 'register']);
+Route::post('/create', [CafeController::class, 'create']);
