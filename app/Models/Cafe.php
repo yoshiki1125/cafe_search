@@ -10,6 +10,20 @@ class Cafe extends Model
 {
     use HasFactory;
     
+   protected $fillable = [
+       'name',
+       'address',
+       'access',
+       'tell',
+       'open_hours',
+       'regular_holiday',
+       'wifi',
+       'outlet',
+       'working_space',
+       'smorking_space',
+       'paper_cigarette',
+       ];
+   
     public function reviews()
     {
         return $this->hasMany(Reviw::class);
@@ -19,4 +33,6 @@ class Cafe extends Model
     {
         return $this->belongsToMany(user::class);
     }
-}
+    
+   
+ }   
