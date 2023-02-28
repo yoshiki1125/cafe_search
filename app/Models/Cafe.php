@@ -33,6 +33,4 @@ class Cafe extends Model
     {
         return $this->belongsToMany(user::class);
     }
-    
-   
  }   
