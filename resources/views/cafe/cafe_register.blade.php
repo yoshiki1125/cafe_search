@@ -9,8 +9,12 @@
 
         
     </head>
+    <x-app-layout>
+        <x-slot name="header">
+            カフェを登録する
+        </x-slot>
     <body>
-        <form action="/create" method="POST">
+        <form action="create" method="POST">
             @csrf
         <div class="cafe_name">
             <h2>店名</h2>
@@ -60,6 +64,7 @@
         </div>
         <input type="submit" value="この内容で登録する"/>
         </form>
-        
+        <a href="/">登録をやめる</a>
+    </x-app-layout>    
     </body>
 </html>
