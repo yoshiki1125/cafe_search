@@ -14,7 +14,7 @@
             カフェを登録する
         </x-slot>
     <body>
-        <form action="create" method="POST">
+        <form action="completeRegister" method="POST">
             @csrf
         <div class="cafe_name">
             <h2>店名</h2>
@@ -23,6 +23,7 @@
         <div class="address">
             <h2>住所</h2>
             <input type="text" name="cafe[address]" placeholder="住所を入力してください"/>
+            
         </div>
         <div class="access">
             <h2>アクセス</h2>

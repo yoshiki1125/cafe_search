@@ -34,5 +34,6 @@ require __DIR__.'/auth.php';
 Route::get('/', [cafeController::class, 'home'])->name('home');
 Route::get('search', [cafeController::class, 'search']);
 Route::get('register', [CafeController::class, 'register'])->name('register');
-Route::post('create', [CafeController::class, 'create']);
+Route::post('completeRegister', [CafeController::class, 'completeRegister']);
+Route::get('map/{cafe}', [CafeController::class, 'map']);
 
