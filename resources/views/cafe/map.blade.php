@@ -9,16 +9,15 @@
     </head>
     <body>
     <h1 class="name">{{ $cafe->name }}</h1>
-   <div id="map" style="width:500px; height:500px;"></div>
+   <div id="map" style="width:500px; height:500px"></div>
     <h2 class="address">{{ $cafe->address }}</h2>
-   
    <script>
-   function initMap() {
-   var target = document.getElementById('map'); //マップを表示する要素を指定
-   var address = '{{ $cafe->address }}'; //渡された住所を指定
-   var geocoder = new google.maps.Geocoder(); //ジオコーディングのインスタンス生成 
+function initMap() {
+  var target = document.getElementById('map');
+  var address = '{{ $cafe->address }}'; //住所を指定
+  var geocoder = new google.maps.Geocoder();
 
-   geocoder.geocode({ address: address }, function(results, status){
+  geocoder.geocode({ address: address }, function(results, status){
     if (status === 'OK' && results[0]){
 
       console.log(results[0].geometry.location);
