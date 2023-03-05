@@ -26,6 +26,7 @@ return new class extends Migration
             $table->boolean('working_space')->default(0);
             $table->boolean('smorking_space')->default(0);
             $table->boolean('paper_cigarette')->default(0);
+            $table->string('image_url')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

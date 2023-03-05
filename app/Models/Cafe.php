@@ -22,11 +22,12 @@ class Cafe extends Model
        'working_space',
        'smorking_space',
        'paper_cigarette',
+       'image_url',
        ];
    
     public function reviews()
     {
-        return $this->hasMany(Reviw::class);
+        return $this->hasMany(Review::class);
     }
     
     public function users()

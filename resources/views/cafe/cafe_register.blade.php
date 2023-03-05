@@ -14,7 +14,7 @@
             カフェを登録する
         </x-slot>
     <body>
-        <form action="create" method="POST">
+        <form action="/register/complete" method="POST" enctype="multipart/form-data">
             @csrf
         <div class="cafe_name">
             <h2>店名</h2>
@@ -23,6 +23,7 @@
         <div class="address">
             <h2>住所</h2>
             <input type="text" name="cafe[address]" placeholder="住所を入力してください"/>
+            
         </div>
         <div class="access">
             <h2>アクセス</h2>
@@ -61,6 +62,9 @@
             <input type="radio" name="cafe[paper_cigarette]" value="1">あり
             <input type="radio" name="cafe[paper_cigarette]" value="0">なし
             </p>
+        </div>
+        <div class="image">
+            <input type="file" name="image">
         </div>
         <input type="submit" value="この内容で登録する"/>
         </form>
