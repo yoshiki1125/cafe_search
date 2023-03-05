@@ -19,7 +19,17 @@
            <h4 class='open_hours'>{{ $cafe->open_hours }}</h4>
            <h4 class='regular_holiday'>{{ $cafe->regular_holiday }}</h4>
            <h4 class='tell'>{{ $cafe->tell }}</h4>
+           <a href="/search/map/{{ $cafe->id }}">マップを見る</a>
        </div>
+       @if($cafe->image_url)
+       <div class=image >
+           <img src="{{ $cafe->image_url }}" alt="画像が読み込めません"/>
+       </div>
+       @endif
+       <form action="", method="POST">
+           <input type>
+       </form>
        @endforeach
+       <a href="/">検索画面へ戻る</a>
     </body>
 </html>

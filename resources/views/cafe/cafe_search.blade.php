@@ -14,7 +14,7 @@
             カフェを検索
         </x-slot>
     <body>
-       <form action="search" method="GET">
+       <form action="/search" method="GET">
            @csrf
   <div class='keywordSearch'>
             <h3>キーワードから検索する</h3>
