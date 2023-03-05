@@ -5,7 +5,7 @@
         <title>検索結果</title>
 
         <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+        <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 
         
     </head>
@@ -19,9 +19,14 @@
            <h4 class='open_hours'>{{ $cafe->open_hours }}</h4>
            <h4 class='regular_holiday'>{{ $cafe->regular_holiday }}</h4>
            <h4 class='tell'>{{ $cafe->tell }}</h4>
-           <a href="map/{{ $cafe->id }}">マップを見る</a>
-          
+           <a href="/search/map/{{ $cafe->id }}">マップを見る</a>
        </div>
+       @if($cafe->image_url)
+       <div class=image >
+           <img src="{{ $cafe->image_url }}" alt="画像が読み込めません"/>
+       </div>
+       @endif
        @endforeach
+       <a href="/">検索画面へ戻る</a>
     </body>
 </html>

@@ -32,8 +32,10 @@ Route::middleware('auth')->group(function () {
 require __DIR__.'/auth.php';
 
 Route::get('/', [cafeController::class, 'home'])->name('home');
-Route::get('search', [cafeController::class, 'search']);
-Route::get('register', [CafeController::class, 'register'])->name('register');
-Route::post('completeRegister', [CafeController::class, 'completeRegister']);
-Route::get('map/{cafe}', [CafeController::class, 'map']);
+Route::get('/search', [cafeController::class, 'search']);
+Route::get('/search/map/{cafe}', [cafeController::class, 'map']);
+Route::get('/register', [CafeController::class, 'register'])->name('register');
+Route::post('/register/complete', [CafeController::class, 'complete']);
+
+
 

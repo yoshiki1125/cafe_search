@@ -13,9 +13,9 @@
     <h2 class="address">{{ $cafe->address }}</h2>
    <script>
 function initMap() {
-  var target = document.getElementById('map'); //マップを表示する要素を指定
+  var target = document.getElementById('map');
   var address = '{{ $cafe->address }}'; //住所を指定
-  var geocoder = new google.maps.Geocoder();  
+  var geocoder = new google.maps.Geocoder();
 
   geocoder.geocode({ address: address }, function(results, status){
     if (status === 'OK' && results[0]){
