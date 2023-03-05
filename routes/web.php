@@ -32,10 +32,16 @@ Route::middleware('auth')->group(function () {
 require __DIR__.'/auth.php';
 
 Route::get('/', [cafeController::class, 'home'])->name('home');
+<<<<<<< HEAD
 Route::get('/search', [cafeController::class, 'search']);
 Route::get('/search/map/{cafe}', [cafeController::class, 'map']);
 Route::get('/register', [CafeController::class, 'register'])->name('register');
 Route::post('/register/complete', [CafeController::class, 'complete']);
 
 
+=======
+Route::get('search', [cafeController::class, 'search']);
+Route::get('register', [CafeController::class, 'register'])->name('register');
+Route::post('create', [CafeController::class, 'create']);
+>>>>>>> parent of 9806d8a (地図表示)
 

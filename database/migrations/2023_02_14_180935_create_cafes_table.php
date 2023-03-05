@@ -17,8 +17,6 @@ return new class extends Migration
             $table->id();
             $table->string('name', 50)->nullable(false);
             $table->string ('address', 50)->nullable(false);
-            $table->double('lat', 8,6)->nullable(false);
-            $table->double('lng', 9,6)->nullable(false);
             $table->string('access', 50)->nullable(false);
             $table->string('tell', 13);
             $table->string('open_hours', 15);

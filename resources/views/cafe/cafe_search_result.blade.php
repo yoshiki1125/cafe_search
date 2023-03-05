@@ -19,7 +19,10 @@
            <h4 class='open_hours'>{{ $cafe->open_hours }}</h4>
            <h4 class='regular_holiday'>{{ $cafe->regular_holiday }}</h4>
            <h4 class='tell'>{{ $cafe->tell }}</h4>
+<<<<<<< HEAD
            <a href="/search/map/{{ $cafe->id }}">マップを見る</a>
+=======
+>>>>>>> parent of 9806d8a (地図表示)
        </div>
        @if($cafe->image_url)
        <div class=image >
