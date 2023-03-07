@@ -81,14 +81,9 @@ class CafeController extends Controller
            $query->where('paper_cigarette', 'LIKE', $paper_cigarette);
        }
        
-       $cafe = $query->get();
+        $cafe = $query->get();
        
-    
-       
-       
-       return view('cafe/cafe_search_result')->with([
-           'cafes' => $cafe,
-           ]);
+        return view('cafe/cafe_search_result')->with(['cafes' => $cafe,]);
     }
     
     public function map(Cafe $cafe)

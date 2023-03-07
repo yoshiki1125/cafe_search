@@ -26,12 +26,6 @@
            <img src="{{ $cafe->image_url }}" alt="画像が読み込めません"/>
        </div>
        @endif
-       <form action="", method="POST">
-           <input type>
-       </form>
-       <form action="", method="POST">
-           <input type>
-       </form>
        @endforeach
        <a href="/">検索画面へ戻る</a>
     </body>
