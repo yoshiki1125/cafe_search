@@ -64,7 +64,7 @@
             </p>
         </div>
         <div class="image">
-            <input type="file" name="image">
+            <input type="file" name="image"/>
         </div>
         <input type="submit" value="この内容で登録する"/>
         </form>
