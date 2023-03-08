@@ -3,9 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cafe;
+use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Requests\CafeRequest;
 use Cloudinary;
+use Illuminate\Support\Facades\Auth;
+
 
 
 class CafeController extends Controller
@@ -91,5 +94,21 @@ class CafeController extends Controller
         return view('cafe/map')->with(['cafe' => $cafe]);
     }
     
+    public function favorite(Request $request, User $user)
+    {   
+        $user = Auth::user();
+        $cafe_id = $request['cafe_id'];
+        $user->cafes()->attach($cafe_id);
+        
+        return redirect("/");
+    }
     
-}
+    public function unfavorite(Request $request, User $user)
+    {
+        $user = Auth::user();
+        $cafe_id =$request['cafe_id'];
+        $user->cafes()->detach($cafe_id);
+        
+        return redirect("/");
+    }
+  }
