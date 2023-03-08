@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use App\Models\Review;
+use App\Models\Cafe;
 
 class User extends Authenticatable
 {
@@ -50,6 +51,6 @@ class User extends Authenticatable
     
     public function cafes()
     {
-        return $this->belongsToMany(cafe::class);
+        return $this->belongsToMany(Cafe::class);
     }
 }
