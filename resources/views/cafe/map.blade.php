@@ -9,8 +9,9 @@
     </head>
     <body>
     <h1 class="name">{{ $cafe->name }}</h1>
-   <div id="map" style="width:500px; height:500px"></div>
     <h2 class="address">{{ $cafe->address }}</h2>
+   <div id="map" style="width:500px; height:500px"></div><!--ここに地図が表示される-->
+    <input value="戻る" onclick="history.back();" type="button"><!--前のページに戻る-->
    <script>
 function initMap() {
   var target = document.getElementById('map');
@@ -23,15 +24,14 @@ function initMap() {
       console.log(results[0].geometry.location);
       
        var map = new google.maps.Map(target, {  
-         center: results[0].geometry.location,
+         center: results[0].geometry.location,//中心を店にする
          zoom: 18
        });
        
        var marker = new google.maps.Marker({
          position: results[0].geometry.location,
          map: map,
-         //ピンが降ってくるアニメーション
-         animation: google.maps.Animation.DROP
+         animation: google.maps.Animation.DROP //ピンが降ってくるアニメーション
        });
        
     }else{ 

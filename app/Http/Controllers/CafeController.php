@@ -86,7 +86,7 @@ class CafeController extends Controller
        
         $cafe = $query->get();
        
-        return view('cafe/cafe_search_result')->with(['cafes' => $cafe,]);
+        return view('cafe/cafe_search_result')->with(['cafes' => $cafe]);
     }
     
     public function map(Cafe $cafe)
@@ -100,7 +100,7 @@ class CafeController extends Controller
         $cafe_id = $request['cafe_id'];
         $user->cafes()->attach($cafe_id);
         
-        return redirect("/");
+        return back();
     }
     
     public function unfavorite(Request $request, User $user)
@@ -109,6 +109,14 @@ class CafeController extends Controller
         $cafe_id =$request['cafe_id'];
         $user->cafes()->detach($cafe_id);
         
-        return redirect("/");
+        return back();
+    }
+    
+    public function my_favorite()
+    {
+        $cafe = \Auth::user()->cafes;
+    
+        return view('cafe/my_favorite')->with(['cafes' => $cafe]);
+        
     }
   }

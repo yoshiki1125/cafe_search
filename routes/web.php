@@ -40,6 +40,6 @@ Route::get('/register', [CafeController::class, 'register'])->name('register');
 Route::post('/register/complete', [CafeController::class, 'complete']);
 Route::post('/search/favorite', [CafeController::class, 'favorite']);
 Route::post('/search/unfavorite', [CafeController::class, 'unfavorite']);
-
+Route::get('/my_favorite', [CafeController::class, 'my_favorite'])->name('my_favorite');
 
 

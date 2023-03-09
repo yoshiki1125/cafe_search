@@ -21,6 +21,9 @@
                     <x-nav-link :href="route('register')" :active="request()->routeIs('register')">
                         {{ __('新規カフェを登録') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('my_favorite')" :active="request()->routeIs('my_favorite')">
+                        {{ __('お気に入りのカフェ') }}
+                    </x-nav-link>
                 </div>
             </div>
 
