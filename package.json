@@ -16,7 +16,7 @@
         "vite": "^4.0.0"
     }
     
-    "script": {
+    "scripts": {
         "dev": "vite",
         "build": "vite build",
         "heroku-postbuild": "npm run build"
