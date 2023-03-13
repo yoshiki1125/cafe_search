@@ -18,7 +18,7 @@ class CafeController extends Controller
         return view('cafe/cafe_search');
     }
     
-    public function register()
+    public function reg()
     {
         return view('cafe/cafe_register');
     }
@@ -115,7 +115,7 @@ class CafeController extends Controller
     public function my_favorite()
     {
         $cafe = \Auth::user()->cafes;
-    
+     
         return view('cafe/my_favorite')->with(['cafes' => $cafe]);
         
     }
