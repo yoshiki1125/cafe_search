@@ -1,17 +1,8 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <title>map</title>
-
-        <!-- Fonts -->
-        <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-    </head>
-    <body>
-    <h1 class="name">{{ $cafe->name }}</h1>
+    <x-app-layout>
+    <h1 class="text-xl">{{ $cafe->name }}</h1>
     <h2 class="address">{{ $cafe->address }}</h2>
    <div id="map" style="width:500px; height:500px"></div><!--ここに地図が表示される-->
-    <input value="戻る" onclick="history.back();" type="button"><!--前のページに戻る-->
+    <button onclick="history.back();" class="text-block rounded px-4 bg-rose-600">戻る</button><!--前のページに戻る-->
    <script>
 function initMap() {
   var target = document.getElementById('map');
@@ -42,5 +33,5 @@ function initMap() {
   });
 }
 </script>
- <script src="https://maps.googleapis.com/maps/api/js?language=ja&region=JP&key={{ config('services.google_map.api_key') }}&callback=initMap" async defer></script>
-    </body>
+<script src="https://maps.googleapis.com/maps/api/js?language=ja&region=JP&key={{ config('services.google_map.api_key') }}&callback=initMap" async defer></script>
+</x-app-layout>

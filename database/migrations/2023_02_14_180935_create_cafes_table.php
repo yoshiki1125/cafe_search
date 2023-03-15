@@ -21,11 +21,11 @@ return new class extends Migration
             $table->string('tell', 13);
             $table->string('open_hours', 15);
             $table->string('regular_holiday', 15);
-            $table->boolean('wifi')->default(0);
-            $table->boolean('outlet')->default(0);
-            $table->boolean('working_space')->default(0);
-            $table->boolean('smorking_space')->default(0);
-            $table->boolean('paper_cigarette')->default(0);
+            $table->string('wifi', 2);
+            $table->string('outlet', 2);
+            $table->string('working_space', 2);
+            $table->string('smorking_space', 2);
+            $table->string('paper_cigarette', 2);
             $table->string('image_url')->nullable();
             $table->timestamps();
             $table->softDeletes();
